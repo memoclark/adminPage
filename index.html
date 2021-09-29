@@ -23,6 +23,12 @@
               </li>
               <li>
                 <a href="#">
+                  <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                  <span class="title">Users</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
                   <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
                   <span class="title">Messages</span>
                 </a>
@@ -41,11 +47,44 @@
               </li>
             </ul>
         </div>
+
+        <div class="main">
+          <div class="topbar">
+            <div class="toggle">
+              <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <div class="search">
+              <label>
+                <input type="text" placeholder="Search here">
+                <ion-icon name="search-outline"></ion-icon>
+              </label>
+            </div>
+            <div class="notification">
+              <div class="notif">
+                <ion-icon name="notifications-outline"></ion-icon>
+              </div>
+            </div>
+            <div class="user">
+              <img src="img/user.jpg">
+            </div>
+          </div>
+        </div>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     
+    <script>
+      let toggle = document.querySelector('.toggle');
+      let navigation = document.querySelector('.navigation');
+      let main = document.querySelector('.main');
+
+      toggle.onclick = function(){
+        navigation.classList.toggle('active');
+        main.classList.toggle('active');
+      }
+    </script>
+
     <script>
       let list = document.querySelectorAll('.navigation li');
       function activelink(){
@@ -54,7 +93,7 @@
         this.classList.add('hovered');
       }
       list.forEach((item) =>
-      item.addEventListener(''))
+      item.addEventListener('mouseover',activelink));
     </script>
   </body>
 </html>
